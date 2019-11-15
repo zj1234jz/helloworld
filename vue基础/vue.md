@@ -44,3 +44,11 @@
 * v-if v-else-if v-else 
 
 * v-show  和v-if 的区别  第一 v-if 是直接不存在  v-show 是使用display：none 第二 v-show 在template上不生效
+
+* v-bind:简写为：，为dom  属性绑定上数据 后面的双引号 "" 相当于{{ }}  
+
+* 绑定class时如果绑定多个class 则需要用数组把他们放在一起  注意绑定class 的时候只能绑定一次，也就是只有第一次绑定生效 注意这里只是帮组你添加
+* 或者不添加class,并不是帮你清除class,添加style也是一样，只识别数组和对象语法
+
+* v-on: 《==》@ 给dom 绑定事件 而且在methods中正常 函数的this 是该vue实例，如果是箭头函数this则为window  且名称不能跟data 中相同，不然会有冲突
+* 其实在data 中定义函数的话this 指代 window ,从这里可以分析出，vue 数据首先会从data 里面找 ，然后去其他地方找 
