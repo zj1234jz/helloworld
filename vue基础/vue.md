@@ -26,3 +26,21 @@
 *  页面的渲染是异步的，数据的更改是同步的 
 
 *  $mount
+
+
+# 指令
+
+* v-pre  不编译当前dom 保留原始输出
+* v-cloak  在dom 被编译之前保留 可以配合css 进行隐藏 在html效果明显，在vue文件没多大效果
+* v-once 当前dom 数据只渲染一次
+* v-html="" 当前dom 里面要添加的innerHtml 这里需要注意xss攻击
+* v-text="" 当前dom 里面要添加的innerText  跟插值表达式唯一的不同在于会覆盖当前dom 的文本节点
+
+* v-if: 判断当前节点是否存在  一般可以配合<template></template>使用
+其中template 没有意义，也不会被渲染进页面
+
+* v-if v-else 
+
+* v-if v-else-if v-else 
+
+* v-show  和v-if 的区别  第一 v-if 是直接不存在  v-show 是使用display：none 第二 v-show 在template上不生效
