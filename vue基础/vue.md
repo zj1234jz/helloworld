@@ -51,4 +51,13 @@
 * 或者不添加class,并不是帮你清除class,添加style也是一样，只识别数组和对象语法
 
 * v-on: 《==》@ 给dom 绑定事件 而且在methods中正常 函数的this 是该vue实例，如果是箭头函数this则为window  且名称不能跟data 中相同，不然会有冲突
-* 其实在data 中定义函数的话this 指代 window ,从这里可以分析出，vue 数据首先会从data 里面找 ，然后去其他地方找 
+* 其实在data 中定义函数的话this 指代 window ,从这里可以分析出，vue 数据首先会从data 里面找 ，然后去其他地方找
+
+* 其实在data中定义的函数不传参数时this 指向window 传递参数时this 指向 vue实例 
+* 建议学习 vue 使用vue 开发版，因为开发版规范vue 
+
+* v-for指令 遍历对象（key,value）in obj  遍历数组(item,index) in arr 其中一定要加:key 且key 唯一，key的存在主要是增加性能
+
+* v-for 可以遍历数字  v-for="item in 8"  1 2 3 4 5 6 7 8 数字从1 开始 也可以遍历字符串 
+* 使用v-for 可以使用template模板，但是key绑定要在真实的元素上
+* key 的作用在于是否dom重新渲染，所以在某些情境下可以增加key 然后让dom 重新渲染
