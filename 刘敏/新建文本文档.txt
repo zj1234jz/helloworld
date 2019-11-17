@@ -1,0 +1,36 @@
+1.v-pre   vue不执行里面的任何东西，{{ ‘a’ }}直接打印。
+2.v-cloak 在页面渲染时，会有毫秒的间隙，利用v-cloak，可以配合css，进行隐藏，解决中间间隙显示的问题。
+3.v-once 始终只拿第一次的值显示，之后改变，不渲染页面，拿的都是缓存里面的值。
+4.v-html 把后台传过来的字符串dom元素，插入到页面  v-html = “dom”在行间写。dom：‘<div>111</div’页面就直接显示111
+5.v-text 在行间写v-text=“name” 直接显示name的值  其实和{{}}差不多，但是v-text会替换掉标签里所有的内容，而插值表达式是拼接、
+测试：写v-text是不是会把里面所有的元素全部替换掉，只留下文本。
+6.v-if 语法：v-if=“flag” flag = true；那么此标签会显示，如果是false，此元素不显示
+测试：此元素是直接被干掉了，//还是只是display：none；
+
+template 标签，无意义标签，执行后，页面结构是没有此标签的。
+
+7.v-else 当v-if里面的值为true时，显示if里面的，为false时，显示else里面，
+在2个标签里面，不能有标签。有标签，else则不会显示。
+例：v-if ="count ===0"
+v-else if = "count ===1"
+
+8. v-else-if 
+9.(v-show display) 当v-show里面的值为true时，显示v-show里面的，为false时，不显示，和if差不多，但有一点区别
+v-show是display=none；标签还是存在，v-if是直接把标签干掉了。
+
+!注意：v-show不支持template
+
+10.v-bind （简写：） （class [ ] { }）在后台传过来值得时候，比如img的地址，直接写变量，识别不了，这个时候就需要用v-bind绑定属性。
+可以绑定多个变量，用数组和逗号隔开 例：[red,blue],可以进行逻辑判断，为true的时候，绑定red，为false的时候绑定blue，用三目运算符
+在绑定了同名的变量是，不会覆盖，
+(style { } [ ]  ：style > style        会覆盖前一个)在给style添加时，需要绑定{ }，那么对象里面的值，都得是字符串，用逗号隔开。
+
+11.（v-on：  简写@）绑定事件 在methods里写函数方法。但是，函数名不能重复，重复就会报错，不能写箭头函数，箭头函数的this是window。普通函数的this，是自己。
+12.v-for 语法：<div v-for = "(item ,index) in arr">{{ item }}</div>
+for循环的每一项都得添加key，不然会有警告，key值必须唯一，不建议使用index，会有index重复。建议使用后台传输过来的id
+
+
+
+
+
+
