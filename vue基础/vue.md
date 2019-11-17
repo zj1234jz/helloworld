@@ -68,3 +68,97 @@
 * 修饰符   事件可以有修饰符 @keyup.enter   或者@keyup.13  可以给修饰符取别名 Vue.config.keycodes={ 'fly-code':112} //注意这里的可以使用连字符 -
 
 * v-model 修饰符  .number 把数字字符串变成数字  .lazy 绑定value 和 onChange事件 .trim  去除前后空格，中间的不能去除
+
+* vue 自定义指令 
+	
+	全局指令 
+		Vue.directive("slice",(el,bindingd,vnode)=>{//第一个参数为指令 名称 使用时要加v-slice 第二个参数可以为函数，或者对象
+			el  :表示当前指令绑定的dom 元素 
+			bindings：里面有很多东西 
+			{
+				args:表示参数      传入方法  v-slice：9.number
+				name:
+				rawname:
+				expression:表示当前绑定的变量
+				value：表示当前绑定的值
+				modifiers:{number:true}
+				def:{bind,update}
+			
+			}
+			vnode : context  记录当前vue实列
+			
+		
+		})
+		
+		//{}第二个参数是对象的时候
+		{
+			bind(el,bindings,vnode){
+				值绑定的时候会调用
+			
+			}
+			update(){
+				//值更新的时候调用
+			}
+			
+			inserted(){
+				//插入dom元素的使用调用
+			}	
+		}
+	局部自定义指令
+		directives：{
+		
+			"slice":（）=》{//key 对应指令名字 后面依然可以是函数或者对象
+			}
+		}
+
+* 过滤器 (不改变数据本身，改变数组展示)
+	
+	全局过滤器 
+	Vue.filter("name",()=>{
+		return newvalue;
+	})
+	使用 {{money | name}}
+	
+	局部过滤器
+	
+	filters:{
+		function(){
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
