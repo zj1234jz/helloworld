@@ -61,3 +61,10 @@
 * v-for 可以遍历数字  v-for="item in 8"  1 2 3 4 5 6 7 8 数字从1 开始 也可以遍历字符串 
 * 使用v-for 可以使用template模板，但是key绑定要在真实的元素上
 * key 的作用在于是否dom重新渲染，所以在某些情境下可以增加key 然后让dom 重新渲染
+* v-model 双向数据绑定，是value 和input的语法糖
+* input text  checkbox radio  textarea select 这些都可以实现数据的双向绑定 其中checkbox 可以使用数组绑定
+* selected 可以使用disabled禁止选择， 同事也可以实现多选 多选状态下需要按住ctrl 
+* $event vue 用来记录当前事件源对象 
+* 修饰符   事件可以有修饰符 @keyup.enter   或者@keyup.13  可以给修饰符取别名 Vue.config.keycodes={ 'fly-code':112} //注意这里的可以使用连字符 -
+
+* v-model 修饰符  .number 把数字字符串变成数字  .lazy 绑定value 和 onChange事件 .trim  去除前后空格，中间的不能去除
