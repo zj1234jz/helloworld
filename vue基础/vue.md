@@ -127,6 +127,31 @@
 	}
 
 
+# vue的渲染过程以及jsx语法
+
+* $el  > $mount -->template--> 拿到模板  ---> AST(抽象语法树)-->render-->Vnode(虚拟dom)-->真实Dom 
+
+* jsx语法 
+   ```
+   render(h){
+                return h("h4",{
+                    class:"red",
+                    style:{
+                        color:"red",
+                        fontSize:"25px"
+                    },
+                    domProps:{
+                        innerHTML:"我不是h4标题"//会直接覆盖innerHTML
+                    }
+                },[
+                    "我是一级标题",//这里可以写成多个dom 元素
+                    h()
+                ])
+
+            }
+    ```
+
+
 
 
 
