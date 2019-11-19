@@ -169,8 +169,10 @@
     ```
 
 # vue生命周期
-    > markdown在线编辑器 [在线编辑](https://www.mdeditor.com/)
-    ![vue 生命周期](https://cn.vuejs.org/images/lifecycle.png)
+
+* markdown在线编辑器 [在线编辑](https://www.mdeditor.com/)
+    ![生命周期](https://cn.vuejs.org/images/lifecycle.png)
+    
 
 
 
