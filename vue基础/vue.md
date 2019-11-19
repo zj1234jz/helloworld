@@ -132,6 +132,7 @@
 * $el  > $mount -->template--> 拿到模板  ---> AST(抽象语法树)-->render-->Vnode(虚拟dom)-->真实Dom 
 
 * jsx语法 
+    >代码如下
    ```
    render(h){
                 return h("h4",{
@@ -150,6 +151,29 @@
 
             }
     ```
+    >于是有了jsx语法 js 写在{}里 dom 写在<>里 这里注意要在HTML里面显示需要其他解析工具,这里标签也可以是变量
+    ```
+    render(){
+        return (
+            <h1 style={{
+                color:"red",
+                fontSize:"25px"
+            }}
+            on-click={console.log(a)}//这里on-click必须要加-
+            >
+
+            </h1>
+        )
+    }
+
+    ```
+
+# vue生命周期
+    > markdown在线编辑器 [在线编辑](https://www.mdeditor.com/)
+    ![vue 生命周期](https://cn.vuejs.org/images/lifecycle.png)
+
+
+
 
 
 
