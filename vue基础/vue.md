@@ -125,10 +125,57 @@
 		function(){
 		}
 	}
+# vue的渲染过程以及jsx语法
+
+* $el  > $mount -->template--> 拿到模板  ---> AST(抽象语法树)-->render-->Vnode(虚拟dom)-->真实Dom 
+
+* jsx语法 
+    >代码如下
+   ```
+   render(h){
+                return h("h4",{
+                    class:"red",
+                    style:{
+                        color:"red",
+                        fontSize:"25px"
+                    },
+                    domProps:{
+                        innerHTML:"我不是h4标题"//会直接覆盖innerHTML
+                    }
+                },[
+                    "我是一级标题",//这里可以写成多个dom 元素
+                    h()
+                ])
+
+            }
+    ```
+    >于是有了jsx语法 js 写在{}里 dom 写在<>里 这里注意要在HTML里面显示需要其他解析工具,这里标签也可以是变量
+    ```
+    render(){
+        return (
+            <h1 style={{
+                color:"red",
+                fontSize:"25px"
+            }}
+            on-click={console.log(a)}//这里on-click必须要加-
+            >
+
+            </h1>
+        )
+    }
+
+    ```
+
+# vue生命周期
+
+* markdown在线编辑器 [在线编辑](https://www.mdeditor.com/)
+    ![生命周期](https://cn.vuejs.org/images/lifecycle.png)
+    
 
 
 # 子组件如何向父组件传递数据
 >使用 \$children 一般来说\$parent 只有一个，但是$children 是一个数组，因为可以有多个 
+
 
 >使用\$refs 这里需要注意两点 第一是如果把ref="same" 作用于多个dom 那么只会识别最后一个dom 如果是使用v-for 循环，那么会被变成数组
 
