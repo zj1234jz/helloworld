@@ -192,7 +192,22 @@
 
 # 组件之间传递数据值eventbus
 
->综述：就是利用vue 原型上的一个vue实列，然后通过对该实列的发布$emit()事件和订阅 $on("click",()=>{}) 实现数据通信
+>综述：就是利用vue 原型上的一个vue实列，然后通过对该实列的发布$emit()事件和订阅 $on("click",()=>{}) 实现数据通信、
+
+# 关于vue实列的this 
+>在跟实列中data中的this指向window 在组件中data 中的this指向其vue实列
+
+>vue 中的单向数据流概念
+
+* 父子组件的双向数据传递 
+  
+>第一使用：value + @input  ==>v-model
+
+>第二使用：:value + @update:value ==>:value.sync 的语法糖
+
+
+
+
 
 
 
