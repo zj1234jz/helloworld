@@ -125,8 +125,6 @@
 		function(){
 		}
 	}
-
-
 # vue的渲染过程以及jsx语法
 
 * $el  > $mount -->template--> 拿到模板  ---> AST(抽象语法树)-->render-->Vnode(虚拟dom)-->真实Dom 
@@ -175,6 +173,7 @@
     
 
 
+
 # 组件之间的通讯1
 
 >使用属性绑定  props
@@ -195,8 +194,37 @@ inject:["title"]
 ```
 ![ui 图](file:///C:/Users/dell/Desktop/%E5%88%86%E5%B1%8F/ui/ui1.png)
 
+# 子组件如何向父组件传递数据
+>使用 \$children 一般来说\$parent 只有一个，但是$children 是一个数组，因为可以有多个 
 
 
+>使用\$refs 这里需要注意两点 第一是如果把ref="same" 作用于多个dom 那么只会识别最后一个dom 如果是使用v-for 循环，那么会被变成数组
+
+>技巧传值，只用过函数传值，这个不常用，或者说属于基础知识
+
+>监听组件点击 默认情况下组件是无法响应事件的，需要添加修饰符.native 才可以向原生dom那样实现点击
+
+>关于$attrs 和 props 和 $listener 三者之间的关系 非事件对象可以用$attrs 和 props 这两者的区别在于子组件是否有注册使用，而$listenner则保存该组件的事件属性
+
+>使用$emit() 方式触发组件事件，既然组件自己本身不知道自己被点击了，那么就内部提醒一下 使用 $emit("click","params")
+
+>$listenner 如何绑定 使用v-on 可以把该组件所有事件直接绑定在在组件dom上 
+
+
+# 组件之间传递数据值eventbus
+
+>综述：就是利用vue 原型上的一个vue实列，然后通过对该实列的发布$emit()事件和订阅 $on("click",()=>{}) 实现数据通信、
+
+# 关于vue实列的this 
+>在跟实列中data中的this指向window 在组件中data 中的this指向其vue实列
+
+>vue 中的单向数据流概念
+
+* 父子组件的双向数据传递 
+  
+>第一使用：value + @input  ==>v-model
+
+>第二使用：:value + @update:value ==>:value.sync 的语法糖
 
 
 
