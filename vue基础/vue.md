@@ -226,6 +226,45 @@ inject:["title"]
 
 >第二使用：:value + @update:value ==>:value.sync 的语法糖
 
+# 关于slot (插槽)
+
+>何时需要  在一个组件里还想插入HTML 或者其他dom 默认是不支持的，但是可以使用插槽
+
+```
+<my-component>
+	这是一个按钮
+	<tempalte v-slot:name值>这是一个sb </template>
+</my-component>
+js
+	components:{
+		myComponent:{
+			template:<div><slot name="default"></slot></div>
+		}
+	}
+
+```
+>注意点
+* 第一是 v-slot: 的简写为#
+* 第二是 组件内部没有slot 的情况下是不会渲染组件标签里的东西
+* 第三是 组件里面有没写名字的slot 标签，默认外部组件标签里的东西会被插入到该slot 里
+* 第四是如果外部使用标签 并且指明名字的插入 会插入到内部对应名字哪里
+
+# 安装脚手架
+
+	* npm install -g @vue/cli 用于快速创建项目
+	* npm install -g @vue/cli-service-global 用于原形开发，编译.vue 文件	
+	* npm uninstall vue-cli -g 用于卸载之前的旧版本
+	* npm  install -g@vue/cli-init 安装桥接工作 可以使用旧版本的init
+	* 插件文明 Vetur 
+
+# 递归组件 如何在组件内使用自身 
+
+	给组件命名{
+		name:""
+	}
+	再使用
+
+	还有如何利用v-if  和v-show 的配合 
 
 
 
