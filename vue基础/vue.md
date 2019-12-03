@@ -175,7 +175,25 @@
     
 
 
+# 组件之间的通讯1
 
+>使用属性绑定  props
+* 没绑定的属性会被存在 vm.$attrs 里面 ，直接绑定这个对象，语法为 v-bind="$attrs" 这样没被绑定的属性会出现在html 结构中。这时可以使用
+inheritAttrs = false 这样就不会出现没绑定的自定义属性，但是原有特性任然会出现，比如说class
+
+>使用$parent 和$children 
+
+>使用provide 和 inject 
+ 
+```
+provide:{
+	title:"title"，
+	name:"zj",
+}
+inject:["title"]
+
+```
+![ui 图](file:///C:/Users/dell/Desktop/%E5%88%86%E5%B1%8F/ui/ui1.png)
 
 
 
